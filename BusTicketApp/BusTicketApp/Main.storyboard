@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g9u-aM-iGb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jr7-4Z-8t0">
+            <objects>
+                <navigationController id="g9u-aM-iGb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ri7-wc-3P2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dlp-CI-tAD" kind="relationship" relationship="rootViewController" id="0ge-7U-Rzm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aez-u4-0Ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="-1"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c97-jO-yWw">
+            <objects>
+                <viewController id="dlp-CI-tAD" customClass="ViewController" customModule="BusTicketApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0qD-BS-BaC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="la4-db-YLB">
+                                <rect key="frame" x="10" y="98" width="394" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="EDk-uU-gut"/>
+                                    <constraint firstAttribute="height" constant="250" id="RdH-02-CJr"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VAB-RH-5gy">
+                                <rect key="frame" x="10" y="368" width="394" height="333"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aG3-2a-xTC">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Soyad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-ld-JG1">
+                                        <rect key="frame" x="0.0" y="39" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TC Kimlik" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ala-xd-eJk">
+                                        <rect key="frame" x="0.0" y="78" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="1ZX-I4-hXG">
+                                        <rect key="frame" x="0.0" y="117" width="394" height="216"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <locale key="locale" localeIdentifier="tr"/>
+                                        <connections>
+                                            <action selector="datePickerSelected:" destination="dlp-CI-tAD" eventType="valueChanged" id="Gwl-tN-Dmr"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsP-9n-24W">
+                                <rect key="frame" x="10" y="721" width="394" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bilet Sayısı:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4y-qM-SS7">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="7BG-wv-onY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lFZ-gG-3db">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="x7o-Uv-ZSw"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="ticketStepper:" destination="dlp-CI-tAD" eventType="valueChanged" id="dSD-xv-cHD"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zai-rX-lAV">
+                                        <rect key="frame" x="300" y="0.0" width="94" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lFZ-gG-3db" firstAttribute="leading" secondItem="d4y-qM-SS7" secondAttribute="trailing" constant="10" id="NAJ-ec-8gm"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwG-kG-n7k">
+                                <rect key="frame" x="10" y="803" width="394" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="U0F-Me-qah"/>
+                                    <constraint firstAttribute="width" constant="350" id="tdU-hU-auL"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Continue" image="bus.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="selectSeatBtn:" destination="dlp-CI-tAD" eventType="touchUpInside" id="Ia2-eU-m4D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6pT-8s-Ys4"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="VAB-RH-5gy" firstAttribute="leading" secondItem="6pT-8s-Ys4" secondAttribute="leading" constant="10" id="4qx-SE-7Rm"/>
+                            <constraint firstItem="DsP-9n-24W" firstAttribute="leading" secondItem="6pT-8s-Ys4" secondAttribute="leading" constant="10" id="9o4-MS-lbC"/>
+                            <constraint firstItem="DsP-9n-24W" firstAttribute="top" secondItem="VAB-RH-5gy" secondAttribute="bottom" constant="20" id="CJV-Xi-ESB"/>
+                            <constraint firstItem="6pT-8s-Ys4" firstAttribute="trailing" secondItem="DsP-9n-24W" secondAttribute="trailing" constant="10" id="CeX-lb-wVa"/>
+                            <constraint firstItem="la4-db-YLB" firstAttribute="top" secondItem="6pT-8s-Ys4" secondAttribute="top" constant="10" id="Gd6-JY-Zr4"/>
+                            <constraint firstItem="6pT-8s-Ys4" firstAttribute="trailing" secondItem="UwG-kG-n7k" secondAttribute="trailing" constant="10" id="H4L-X3-XsH"/>
+                            <constraint firstItem="UwG-kG-n7k" firstAttribute="top" secondItem="DsP-9n-24W" secondAttribute="bottom" constant="50" id="IXV-Ff-y0l"/>
+                            <constraint firstItem="UwG-kG-n7k" firstAttribute="leading" secondItem="6pT-8s-Ys4" secondAttribute="leading" constant="10" id="JhX-vs-HK3"/>
+                            <constraint firstItem="6pT-8s-Ys4" firstAttribute="trailing" secondItem="VAB-RH-5gy" secondAttribute="trailing" constant="10" id="RTc-lF-fmx"/>
+                            <constraint firstItem="la4-db-YLB" firstAttribute="leading" secondItem="6pT-8s-Ys4" secondAttribute="leading" constant="10" id="dnN-Mj-Vin"/>
+                            <constraint firstItem="6pT-8s-Ys4" firstAttribute="trailing" secondItem="la4-db-YLB" secondAttribute="trailing" constant="10" id="fTg-yU-CJv"/>
+                            <constraint firstItem="VAB-RH-5gy" firstAttribute="top" secondItem="la4-db-YLB" secondAttribute="bottom" constant="20" id="p3L-1M-0bE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sHL-yS-vln"/>
+                    <connections>
+                        <outlet property="adTextField" destination="aG3-2a-xTC" id="jL3-EA-tpG"/>
+                        <outlet property="biletSayisiLabel" destination="Zai-rX-lAV" id="7ib-eO-2P3"/>
+                        <outlet property="idTextField" destination="ala-xd-eJk" id="e5x-bH-Cef"/>
+                        <outlet property="soyadTextField" destination="hFL-ld-JG1" id="aX6-vP-nQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSK-FJ-eHu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462.31884057971018" y="-1.3392857142857142"/>
+        </scene>
+        <!--Bus View Controller-->
+        <scene sceneID="Ibp-OM-GDb">
+            <objects>
+                <viewController storyboardIdentifier="busVC" id="j1Z-M5-dsF" customClass="BusViewController" customModule="BusTicketApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nbJ-94-uWX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="C73-t1-3wT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkO-af-mT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="-1"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="idw-jV-gqc">
+            <objects>
+                <viewController storyboardIdentifier="popupVC" id="uON-yZ-9m5" customClass="PopUpViewController" customModule="BusTicketApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJK-ka-osG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8A-LC-0jO">
+                                <rect key="frame" x="67" y="213" width="280" height="430"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="MyB-pu-X6T">
+                                        <rect key="frame" x="20" y="8" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOLCU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNG-OS-X3p">
+                                        <rect key="frame" x="20" y="173" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TARİH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h9-YL-qmW">
+                                        <rect key="frame" x="20" y="202" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-Ef-ZHV">
+                                        <rect key="frame" x="20" y="231" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KOLTUK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbZ-tK-zhE">
+                                        <rect key="frame" x="20" y="260" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TC KİMLİK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuY-XM-Llh">
+                                        <rect key="frame" x="20" y="144" width="240" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyt-jP-x6K">
+                                        <rect key="frame" x="20" y="316" width="240" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="SATIN AL">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyTicket:" destination="uON-yZ-9m5" eventType="touchUpInside" id="xMU-VO-Fgl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dag-IZ-Gyi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="idLabel" destination="ZuY-XM-Llh" id="Oi3-0t-0eD"/>
+                        <outlet property="koltukLabel" destination="DbZ-tK-zhE" id="DN6-3N-fQm"/>
+                        <outlet property="popUpView" destination="U8A-LC-0jO" id="MBD-jx-KOM"/>
+                        <outlet property="saatLabel" destination="QcG-Ef-ZHV" id="6W7-p0-aij"/>
+                        <outlet property="tarihLabel" destination="2h9-YL-qmW" id="QyC-VS-bTG"/>
+                        <outlet property="yolcuLabel" destination="vNG-OS-X3p" id="hxo-7x-VHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tC-92-VVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="-1.3392857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bus" width="452" height="452"/>
+        <image name="bus.fill" catalog="system" width="128" height="122"/>
+        <image name="ticket" width="200" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
